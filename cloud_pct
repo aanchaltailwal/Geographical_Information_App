@@ -1,0 +1,10 @@
+id.innerHTML  = response.id
+name.innerHTML = response.name
+country.innerHTML = response.country
+timezone.innerHTML = response.timezone
+language.innerHTML = response.language
+adminArea.innerHTML = response.adminAre
+adminArea2.innerHTML = response.adminArea2
+adminArea3.innerHTML = response.adminArea3 
+lon.innerHTML = response.lon
+lat.innerHTML = response.lat
