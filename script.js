@@ -1,4 +1,3 @@
-// Function to fetch weather data for a given city
 const getWeatherData = async (city) => {
     const url = `https://foreca-weather.p.rapidapi.com/location/search/${city}?lang=en`;
   
@@ -12,7 +11,6 @@ const getWeatherData = async (city) => {
   
     try {
       const response = await fetch(url, options);
-  
       console.log('Response status:', response.status); // Log the response status
   
       if (!response.ok) {
@@ -22,7 +20,6 @@ const getWeatherData = async (city) => {
       const data = await response.json();
       console.log('API Response:', data); // Log the entire API response
   
-      // Check if the locations array exists and has at least one element
       if (data.locations && data.locations.length > 0) {
         const location = data.locations[0]; // Assuming the first element contains the data
   
@@ -31,7 +28,7 @@ const getWeatherData = async (city) => {
           name: 'name',
           country: 'country',
           timezone: 'timezone',
-          //language: 'language',
+          language: 'language',
           adminArea: 'adminArea',
           adminArea2: 'adminArea2',
           adminArea3: 'adminArea3',
@@ -48,7 +45,7 @@ const getWeatherData = async (city) => {
         for (const key in elements) {
           const element = document.getElementById(elements[key]);
           if (element) {
-            element.innerHTML = location[key] || ''; // Set the value or an empty string if it's undefined
+            element.textContent = location[key] || ''; // Set the value or an empty string if it's undefined
             console.log(`${key.charAt(0).toUpperCase() + key.slice(1)}:`, location[key]);
           } else {
             console.error(`Element with ID "${elements[key]}" not found.`);
@@ -62,14 +59,35 @@ const getWeatherData = async (city) => {
     }
   };
   
+  // Function to create and add rows for the "Other Cities" table
+  const addRowToTable = (cityData) => {
+    const otherCitiesTable = document.getElementById('otherCitiesTable');
+    const row = document.createElement('tr');
+  
+    row.innerHTML = `
+      <th scope="row" class="text-start">${cityData.name}</th>
+      <td>${cityData.id || ''}</td>
+      <td>${cityData.country || ''}</td>
+      <td>${cityData.timezone || ''}</td>
+      <td>${cityData.language || ''}</td>
+      <td>${cityData.adminArea || ''}</td>
+      <td>${cityData.adminArea2 || ''}</td>
+      <td>${cityData.adminArea3 || ''}</td>
+      <td>${cityData.lon || ''}</td>
+      <td>${cityData.lat || ''}</td>
+    `;
+  
+    otherCitiesTable.appendChild(row);
+  };
+  
   // Function to fetch and populate data for other cities
   const fetchOtherCitiesData = async () => {
     const otherCities = [
-      'Chandigarh',
+      'Columbia',
       'Lucknow',
-      'Kolkata',
+      'Seattle',
       'Pune',
-      'Goa'
+      'Angus'
     ];
   
     try {
@@ -88,24 +106,10 @@ const getWeatherData = async (city) => {
         const data = await response.json();
   
         if (data.locations && data.locations.length > 0) {
-          const location = data.locations[0]; // Assuming the first element contains the data
-  
-          const tableBody = document.querySelector('.table tbody');
-          if (tableBody) {
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `
-              <td>${city}</td>
-              <td>${location.id || ''}</td>
-              <td>${location.country || ''}</td>
-              <td>${location.timezone || ''}</td>
-              <td>${location.adminArea || ''}</td>
-              <td>${location.adminArea2 || ''}</td>
-              <td>${location.adminArea3 || ''}</td>
-              <td>${location.lon || ''}</td>
-              <td>${location.lat || ''}</td>
-            `;
-            tableBody.appendChild(newRow);
-          }
+          const location = data.locations[0];
+          addRowToTable(location); // Call the function to add the row to the table
+        } else {
+          console.error(`No location data found for "${city}".`);
         }
       }
     } catch (error) {
