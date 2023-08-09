@@ -16,7 +16,7 @@ Using the app is effortless! Just enter the name of the city you want to know mo
 - Admin Area 2: In some cases, cities are divided into smaller administrative areas. Our app provides this data to give you a more detailed view.
 - Admin Area 3: Similar to Admin Area 2, this information gives you even more granularity about the city's administrative structure.
 
-##City ID and Coordinates:
+## City ID and Coordinates:
 - City ID: Discover a unique identifier for the city, which can be helpful for various applications.
 - Longitude and Latitude: Get the precise geographical coordinates of the city, allowing you to pinpoint its location on a map.
 Our app is designed with simplicity and user-friendliness in mind. The interface is intuitive, making it easy for anyone to use, regardless of their technical expertise. Plus, it's lightning-fast, so you can access the information you need without any delays.
