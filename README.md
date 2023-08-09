@@ -1,4 +1,4 @@
-##Welcome to the Geographical Information App
+#Welcome to the Geographical Information App
 Our Geographical Information App is your one-stop destination for exploring cities and locations from all around the world. Whether you're a traveler, a researcher, or simply curious about different places, our app provides you with comprehensive data about any city you desire.
 
 Using the app is effortless! Just enter the name of the city you want to know more about, and within seconds, you'll have access to a wealth of information.
