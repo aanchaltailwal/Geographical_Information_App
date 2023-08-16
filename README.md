@@ -22,3 +22,19 @@ Using the app is effortless! Just enter the name of the city you want to know mo
 Our app is designed with simplicity and user-friendliness in mind. The interface is intuitive, making it easy for anyone to use, regardless of their technical expertise. Plus, it's lightning-fast, so you can access the information you need without any delays.
 
 Whether you're planning a trip, conducting research, or simply satisfying your curiosity, our Geographical Information App is here to help you explore the world. So start your journey of discovery today and unlock fascinating details about cities near and far!
+
+## Live Demo
+Experience the Geographical Information App in action: https://main--geographical-information.netlify.app/ 
+
+## Contributing
+We welcome contributions from the community to enhance and improve the Geographical Information App. If you'd like to contribute, follow these steps:
+
+1. Fork this repository.
+
+2. Create a new branch for your feature or improvement.
+
+3. Make your changes and commit them.
+
+4. Push your changes to your fork.
+
+5. Open a pull request with a detailed description of your changes.
